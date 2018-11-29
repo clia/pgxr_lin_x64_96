@@ -6837,7 +6837,7 @@ pub const IPPORT_EFSSERVER: _bindgen_ty_7 = 520;
 pub const IPPORT_BIFFUDP: _bindgen_ty_7 = 512;
 pub const IPPORT_WHOSERVER: _bindgen_ty_7 = 513;
 pub const IPPORT_ROUTESERVER: _bindgen_ty_7 = 520;
-pub const IPPORT_RESERVED: _bindgen_ty_7 = 1024;
+//pub const IPPORT_RESERVED: _bindgen_ty_7 = 1024;
 pub const IPPORT_USERRESERVED: _bindgen_ty_7 = 5000;
 pub type _bindgen_ty_7 = u32;
 #[repr(C)]
@@ -29698,11 +29698,11 @@ extern "C" {
     #[link_name = "\u{1}signgam"]
     pub static mut signgam: ::std::os::raw::c_int;
 }
-pub const FP_NAN: _bindgen_ty_8 = 0;
-pub const FP_INFINITE: _bindgen_ty_8 = 1;
-pub const FP_ZERO: _bindgen_ty_8 = 2;
-pub const FP_SUBNORMAL: _bindgen_ty_8 = 3;
-pub const FP_NORMAL: _bindgen_ty_8 = 4;
+//pub const FP_NAN: _bindgen_ty_8 = 0;
+//pub const FP_INFINITE: _bindgen_ty_8 = 1;
+//pub const FP_ZERO: _bindgen_ty_8 = 2;
+//pub const FP_SUBNORMAL: _bindgen_ty_8 = 3;
+//pub const FP_NORMAL: _bindgen_ty_8 = 4;
 pub type _bindgen_ty_8 = u32;
 pub type Timestamp = int64;
 pub type TimestampTz = int64;
