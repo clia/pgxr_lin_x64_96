@@ -20,7 +20,7 @@ macro_rules! PG_MODULE_MAGIC {
 
 #[macro_export]
 macro_rules! PG_FUNCTION_INFO_V1 {
-    ( $funcname:ident ) => {
+    ($funcname:ident) => {
         #[no_mangle]
         pub extern "C" fn $funcname() -> *const Pg_finfo_record
         {
@@ -29,4 +29,30 @@ macro_rules! PG_FUNCTION_INFO_V1 {
             }
         }
     };
+}
+
+///
+/// Some macros for PG_GETARG_* error handling
+/// 
+
+/// While returning String
+#[macro_export]
+macro_rules! try_return_string {
+    ($expr:expr) => (match $expr {
+        std::result::Result::Ok(val) => val,
+        std::result::Result::Err(err) => {
+            return PG_RETURN_STRING(format!("ERROR: {}", err.description()))
+        }
+    });
+}
+
+/// While returning integer
+#[macro_export]
+macro_rules! try_return_int {
+    ($expr:expr) => (match $expr {
+        std::result::Result::Ok(val) => val,
+        std::result::Result::Err(err) => {
+            return PG_RETURN_I32(-1)
+        }
+    });
 }
